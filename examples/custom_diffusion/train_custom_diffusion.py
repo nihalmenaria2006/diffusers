@@ -333,6 +333,24 @@ def parse_args(input_args=None):
         required=True,
         help="Path to pretrained model or model identifier from huggingface.co/models.",
     )
+
+# python3 examples/custom_diffusion/train_custom_diffusion.py \
+#   --pretrained_model_name_or_path="stabilityai/stable-diffusion-xl-base-1.0" \
+#   --instance_data_dir="/home/ml2/Documents/diffusers/data/A" \
+#   --instance_prompt="a painting in <mask> style" \
+#   --modifier_token="<mask-style>" \
+#   --initializer_token="product" \
+#   --class_data_dir="/home/ml2/Documents/diffusers/data/B"
+#   --resolution=64 \
+#   --train_batch_size=1 \
+#   --learning_rate=1e-5 \
+#   --max_train_steps=1000 \
+#   --checkpointing_steps=250 \
+#   --output_dir="./monet-custom-diffusion" \
+#   --validation_prompt="a landscape in <monet-style> style" \
+#   --num_validation_images=4 \
+#   --validation_steps=100
+
     parser.add_argument(
         "--revision",
         type=str,
